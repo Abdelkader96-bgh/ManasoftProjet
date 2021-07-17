@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Equipement{% endblock %}
+{% block body %}
+<body style="background-image: url('/image/materiel.JPG'); width=auto;">
+<h1 class="display-9" style="text-align:center;">Nouveau Equipement</h1> 
+<div class="container" style="background: rgba(11, 13, 24, 0.6); width:60%">
+    <div class="row" style=" margin: 0 auto ; width:50%;  position:auto;">
+            {{ form_start(form) }}
+                <div class="form-group">
+                    <label><strong>Numéro:</strong></label>
+                    {{ form_widget(form.number) }}
+                </div>   
+                <div class="form-group">
+                    <label><strong>Nom:</strong></label>
+                    {{ form_widget(form.name) }}
+                </div>
+                   <div class="form-group">
+                    <label><strong>Catégorie:</strong></label>
+                    {{ form_widget(form.category) }}
+                </div>
+                 <div class="form-group">
+                    <label><strong>Déscription:</strong></label>
+                    {{ form_widget(form.description) }}
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-secondary" href="#">Retour</a>
+                    <button type="submit" class="btn btn-success">Valider</button>
+                </div>
+            {{ form_end(form) }}
+        
+    </div>
+</div>
+   
+{% endblock %}

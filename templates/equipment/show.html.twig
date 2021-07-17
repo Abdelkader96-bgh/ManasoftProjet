@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}Equipment{% endblock %}
+{% block body %}
+<body style="background-image: url('/image/materiel.JPG'); width=auto;">
+<div class="exemple1" style="margin: 0 auto; margin-top: 20px;width:80%;">
+  <h3>Fiche du matériel</h3>
+        <div style="background: rgba(11, 13, 24, 0.6); width:60%;">
+            <p><b>ID: {{ equipment.id  }}</b></p>
+            <p><b>Nom : {{ equipment.name  }}</b></p>
+            <p><b>Numéro : {{ equipment.number }}</b></p>
+            <p><b>Catégorie: {{ equipment.category  }}</b></p>
+            <p><b>Description : {{ equipment.description }}</b></p>
+            <p><b>Date de création : {{ equipment.createdAt|date('d/m/Y') }}</b></p>
+            <p><b>Date mise à jour : {{ equipment.updateAt|date('d/m/Y')}}</b></p>  
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <a class="btn btn-info" href="{{ path('equipment_edit', { 'id' : equipment.id }) }}"> Modifier </a>
+            </div>
+            <div class="col-1">
+                {{ include('/equipment/_delete_form.html.twig') }}
+            </div>
+            <div class="col-10 right-0">
+                <a class="btn btn-info" href="{{ path('equipment_index') }}"> Retour à la liste </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

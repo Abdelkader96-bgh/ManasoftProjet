@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block title %}Modifier un équipment{% endblock %}
+{% block body %}
+
+<body style="background-image: url('/image/materiel.JPG'); width=auto;">
+<h1 class="display-9" style="text-align:center;">Mise à jour de l'équipement</h1> 
+<div class="container" style="background: rgba(11, 13, 24, 0.6); width:60%">
+    <div class="row" style=" margin: 0 auto ; width:50%;  position:auto;">
+            {{ form_start(form) }}
+                <div class="form-group">
+                    <label><strong>Numéro:</strong></label>
+                    {{ form_widget(form.number) }}
+                </div>   
+                <div class="form-group">
+                    <label><strong>Nom:</strong></label>
+                    {{ form_widget(form.name) }}
+                </div>
+                   <div class="form-group">
+                    <label><strong>Catégorie:</strong></label>
+                    {{ form_widget(form.category) }}
+                </div>
+                 <div class="form-group">
+                    <label><strong>Déscription:</strong></label>
+                    {{ form_widget(form.description) }}
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-secondary" href="{{ path('equipment_index') }}">Retour</a>
+                    <button type="submit" class="btn btn-success">Mise à jour</button>
+                </div>
+            {{ form_end(form) }}
+        
+    </div>
+</div>
+{% endblock %}

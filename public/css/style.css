@@ -1,0 +1,30 @@
+@charset "UTF-8";
+ .jumbotron {
+                padding: 1rem 1rem !important;
+                width: 80%;
+            }
+
+            p {
+                margin-bottom: 0rem;
+            }
+
+            .table td, .table th {
+                padding: .50rem;
+            }
+
+            .custom-file-input {
+                opacity: unset;
+            }
+
+            .custom-file-label {
+                background-color: transparent !important;
+                border: 0px !important;
+            }
+
+            .custom-file-label::after {
+                content: unset;
+            }
+.FFF{
+    width: 800px;
+}
+      
