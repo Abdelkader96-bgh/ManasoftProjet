@@ -24,7 +24,13 @@ class EquipmentControllerTest extends webTestCase
         $form['equipment[category]'] = '1';
         $form['equipment[description]'] = 'très bonne qualité';
         $client->submit($form);
-        //$client->followRedirect();
+        $this->assertSame(1,$crawler->filter('html:contains("Nouveau Equipement")')->count()); 
+
   }
+  public function testShowEquipment(){
+    $client = static::createClient();
+    $crawler=$client->request('GET', '/equipment/');
+    $this->assertSame(1,$crawler->filter('html:contains("Equipments")')->count()); 
+}
 }
 
