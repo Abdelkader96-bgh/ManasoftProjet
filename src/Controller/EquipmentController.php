@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use DateTimeImmutable;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+
 
 /**
  * @Route("/equipment")
@@ -29,7 +31,7 @@ class EquipmentController extends AbstractController
     /**
      * @Route("/new", name="equipment_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request,ValidatorInterface $validator): Response
     {
         $equipment = new Equipment();
         $equipment->setCreatedAt(new \DateTimeImmutable());
@@ -42,12 +44,17 @@ class EquipmentController extends AbstractController
 
             return $this->redirectToRoute('equipment_index');
         }
-
+        $errors = $validator->validate($equipment);
+        if (count($errors) > 0) {
+           
+           
         return $this->render('equipment/new.html.twig', [
             'equipment' => $equipment,
             'form' => $form->createView(),
+            'errors' => $errors,
         ]);
-    }
+   }  }
+  
 
     /**
      * @Route("/{id}", name="equipment_show", methods={"GET"})

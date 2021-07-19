@@ -3,9 +3,16 @@
 {% block title %}Nouveau Equipement{% endblock %}
 {% block body %}
 <body style="background-image: url('/image/materiel.JPG'); width=auto;">
-<h1 class="display-9" style="text-align:center;">Nouveau Equipement</h1> 
-<div class="container" style="background: rgba(11, 13, 24, 0.6); width:60%">
-    <div class="row" style=" margin: 0 auto ; width:50%;  position:auto;">
+<h1 class="display-9">Nouveau Equipement</h1>
+<ul style ="color:red ;text-align:center;"> 
+{% for error in errors %}
+    <li>{{ error.message }}</li>
+{% endfor %}
+</ul>
+
+<div class="container">
+    <div class="row1">
+      
             {{ form_start(form) }}
                 <div class="form-group">
                     <label><strong>Numéro:</strong></label>
@@ -31,5 +38,4 @@
         
     </div>
 </div>
-   
-{% endblock %}
+ {% endblock %}

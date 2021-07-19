@@ -26,7 +26,11 @@ class EquipmentType extends AbstractType
                         'Ordinateur' => '2',
                         'Usb' => '3',
              ]])
-            ->add('number',TextType::class)
+            ->add('number',TextType::class, [
+                'attr' => [
+                    'placeholder' => "exp: iPhone X 128Gb"
+                     ]
+            ])
             ->add('description', TextareaType::class, [
                 'attr' => [
                     'placeholder' => "Décrire le matériel en quelques lignes"

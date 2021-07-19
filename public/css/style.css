@@ -1,7 +1,7 @@
 @charset "UTF-8";
  .jumbotron {
                 padding: 1rem 1rem !important;
-                width: 80%;
+                width: 100%;
             }
 
             p {
@@ -24,7 +24,24 @@
             .custom-file-label::after {
                 content: unset;
             }
-.FFF{
-    width: 800px;
+
+.container{
+    background: rgba(11, 13, 24, 0.6);
+    width:60%;
 }
+.row{
+  margin: 0 auto ; width:100%;  position:auto;
+}
+.display-9{
+    text-align:center;
+}
+.exemple1{
+    margin: 0 auto; margin-top: 20px;width:80%;
+}
+.exemple3{
+    color: red; padding-left: 30px;
+}
+.row1{
+    margin: 0 auto ; width:50%;  position:auto;
+  }
       

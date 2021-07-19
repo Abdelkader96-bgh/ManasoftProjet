@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\EquipmentRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=EquipmentRepository::class)
@@ -19,6 +21,7 @@ class Equipment
 
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
+     * @Assert\Length(min=10, minMessage="Le nom du matériel doit faire au moins {{ limit }} caractères.")
      */
     private $name;
 
@@ -29,6 +32,7 @@ class Equipment
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\Length(min=4, minMessage="Le numéro du matériel doit faire au moins {{ limit }} caractères.")
      */
     private $number;
 

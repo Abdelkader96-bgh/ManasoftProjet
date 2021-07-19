@@ -2,13 +2,13 @@
 {% block title %}la liste des équipements{% endblock %}
 {% block body %}
 <body style="background-image: url('/image/materiel.JPG'); width=auto;">
- <div class="FFF">
+ <div class="jumbotron">
     <h3>Equipments</h3>
 
         {% if equipments|length == 0 %}
-            <div style="color: red; padding-left: 30px;">Pas de equipments saisés pour le moment</div>
+            <div class="exemple3">Pas de equipments saisés pour le moment</div>
         {% else %}
-             <table id="example" class="table table-striped table-bordered" style="width:100%">
+             <table class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr class="table-primary">
                     <th scope="col">#</th>
@@ -28,8 +28,8 @@
                         <td>{{ equipment.name }}</td>
                         <td>{{ equipment.number }}</td>
                         <td>{{ equipment.category }}</td>
-                        <td>{{ equipment.createdAt|date('d/m/Y') }}</td>
-                        <td>{{ equipment.updateAt|date('d/m/Y') }}</td>
+                        <td>{{ equipment.createdAt|date('Y-m-d H:i:s') }}</td>
+                        <td>{{ equipment.updateAt|date('Y-m-d H:i:s') }}</td>
                         <td>{{ equipment.description }}</td>
                         <td><a class="btn btn-info" href="{{ path('equipment_show', {'id' : equipment.id}) }}">Détail</a></td>
                     </tr>
