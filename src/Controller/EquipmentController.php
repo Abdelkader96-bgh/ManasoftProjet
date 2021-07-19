@@ -47,13 +47,13 @@ class EquipmentController extends AbstractController
         $errors = $validator->validate($equipment);
         if (count($errors) > 0) {
            
-           
+           }
         return $this->render('equipment/new.html.twig', [
             'equipment' => $equipment,
             'form' => $form->createView(),
             'errors' => $errors,
         ]);
-   }  }
+     }
   
 
     /**

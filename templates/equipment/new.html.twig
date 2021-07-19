@@ -3,39 +3,31 @@
 {% block title %}Nouveau Equipement{% endblock %}
 {% block body %}
 <body style="background-image: url('/image/materiel.JPG'); width=auto;">
-<h1 class="display-9">Nouveau Equipement</h1>
-<ul style ="color:red ;text-align:center;"> 
-{% for error in errors %}
-    <li>{{ error.message }}</li>
-{% endfor %}
-</ul>
-
+<h1 class="display-9" style="text-align:center;">Nouveau Equipement</h1> 
 <div class="container">
     <div class="row1">
-      
             {{ form_start(form) }}
                 <div class="form-group">
                     <label><strong>Numéro:</strong></label>
-                    {{ form_widget(form.number) }}
+                    {{ form_widget(form.number, {'name':"Equipment[number]" }) }}
                 </div>   
                 <div class="form-group">
                     <label><strong>Nom:</strong></label>
-                    {{ form_widget(form.name) }}
+                    {{ form_widget(form.name , {'name':"Equipment[name]" })}}
                 </div>
                    <div class="form-group">
                     <label><strong>Catégorie:</strong></label>
-                    {{ form_widget(form.category) }}
+                    {{ form_widget(form.category, {'name':"Equipment[category]" }) }}
                 </div>
                  <div class="form-group">
                     <label><strong>Déscription:</strong></label>
-                    {{ form_widget(form.description) }}
+                    {{ form_widget(form.description, {'name':"Equipment[description]" }) }}
                 </div>
                 <div class="modal-footer">
-                    <a class="btn btn-secondary" href="#">Retour</a>
-                    <button type="submit" class="btn btn-success">Valider</button>
+                    <a class="btn btn-secondary" href="{{ path('equipment_index') }}">Retour</a>
+                    <button type="submit" class="btn btn-success" name="valider">Valider</button>
                 </div>
-            {{ form_end(form) }}
-        
+            {{ form_end(form) }}   
     </div>
-</div>
- {% endblock %}
+</div>   
+{% endblock %}
